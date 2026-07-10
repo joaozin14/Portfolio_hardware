@@ -441,3 +441,127 @@ nav ul li a:hover {
 .card-item:hover p {
     color: #0d4f75;
 }
+
+/* ==========================================================================
+   6. RESPONSIVIDADE (TELA CHEIA PARA NOTEBOOKS, TABLETS E CELULARES)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Notebooks e Telas Médias (Até 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    #sobre-mim, #pcs, #contato {
+        padding: 60px 40px; /* Reduz um pouco as margens laterais */
+    }
+
+    .sobre-container {
+        gap: 60px; /* Aproxima um pouco o texto da foto */
+    }
+
+    .sobre-foto img {
+        width: 350px; /* Foto ligeiramente menor para notebooks */
+        height: 350px;
+    }
+
+    .pcs-container {
+        gap: 40px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Tablets e Telas Pequenas (Até 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    /* Cabeçalho muda o menu para baixo da logo se faltar espaço lateral */
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        position: static; /* Tira o menu da ponta direita e centraliza abaixo da logo */
+    }
+
+    nav ul {
+        gap: 25px;
+    }
+
+    /* Seção Sobre Mim vira uma coluna (Vertical) */
+    .sobre-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .sobre-texto {
+        max-width: 100%;
+    }
+
+    /* Seção PCs vira uma coluna (Vertical) */
+    .pcs-container {
+        flex-direction: column;
+    }
+
+    .pc-info, .pc-carrossel {
+        width: 100%; /* Cada bloco assume a largura inteira da tela do tablet */
+    }
+
+    /* Formulário expande para usar melhor o espaço do tablet */
+    .form-row {
+        gap: 15px;
+    }
+
+    /* Os 3 Cards de contato se empilham em telas menores */
+    .contato-cards {
+        flex-direction: column;
+        gap: 20px;
+        padding: 40px 20px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Smartphones e Celulares (Até 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    #sobre-mim, #pcs, #contato {
+        padding: 50px 20px; /* Margens bem finas para aproveitar a telinha do celular */
+    }
+
+    /* Foto do 'Sobre Mim' se adapta perfeitamente ao tamanho da tela do celular */
+    .sobre-foto img {
+        width: 280px; 
+        height: 280px;
+    }
+
+    .sobre-texto h2, .pc-info h2, .contato-titulo {
+        font-size: 2rem; /* Títulos menores para não quebrarem a tela */
+    }
+
+    /* Imagens do Carrossel diminuem a altura para não achatar no celular */
+    .slide img {
+        height: 280px;
+    }
+
+    .carrossel-btn {
+        padding: 8px 12px;
+        font-size: 1.2rem; /* Botões do carrossel menores para não cobrir a foto */
+    }
+
+    /* O formulário de contato (Nome e Email) fica um embaixo do outro */
+    .form-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contato-subtitulo {
+        margin-bottom: 25px;
+    }
+    
+    .card-item {
+        padding: 20px 10px; /* Ajusta o padding interno dos cards de rede social */
+    }
+}
