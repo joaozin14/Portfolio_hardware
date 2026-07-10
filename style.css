@@ -44,7 +44,7 @@ header {
 .logo img {
     display: block;
     height: auto;
-    max-width: 140px;
+    max-width: 155px;
     transition: transform 0.3s ease, filter 0.3s ease;
     cursor: pointer;
 }
@@ -85,30 +85,29 @@ nav ul li a:hover {
 }
 
 /* ==========================================================================
-   3. SEÇÃO SOBRE MIM (FOTO MAIOR E TEXTO DESLOCADO PARA A DIREITA)
+   3. SEÇÃO SOBRE MIM (ATUALIZADO)
    ========================================================================== */
 #sobre-mim {
     width: 100%;
-    padding: 80px 80px; /* Aumentei um pouco o espaçamento nas bordas da página */
+    padding: 80px 80px; 
 }
 
 .sobre-container {
     width: 100%;
     display: flex;
     align-items: center;
-    /* Define o alinhamento inicial (foto na esquerda, texto empurrado depois) */
-    justify-content: flex-start; 
-    gap: 120px; /* Aumentei o espaçamento direto entre a foto e o início do texto */
+    /* Alinha os blocos dando o espaço proporcional interno */
+    justify-content: center; 
+    gap: 170px; 
 }
 
-/* Lado Esquerdo: Foto Quadrada Ajustada para ficar Maior */
 .sobre-foto {
     flex-shrink: 0;
 }
 
 .sobre-foto img {
-    width: 430px;   /* Aumentado de 350px para 420px */
-    height: 430px;  /* Mantém o quadrado perfeito */
+    width: 430px;   
+    height: 430px;  
     object-fit: cover;
     display: block;
     border: 6px solid #0d4f75; 
@@ -116,8 +115,7 @@ nav ul li a:hover {
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    margin-right: 130px;
-    margin-left: 60px;
+    /* Removido os margins fixos daqui para não quebrar o mobile */
 }
 
 .sobre-foto img:hover {
@@ -125,10 +123,9 @@ nav ul li a:hover {
     box-shadow: 0px 15px 30px rgba(13, 79, 117, 0.35);
 }
 
-/* Lado Direito: Texto Deslocado e com largura controlada */
 .sobre-texto {
     flex-grow: 1;
-    max-width: 800px; /* Evita que o texto estique até a borda da tela, deixando-o concentrado na direita */
+    max-width: 800px; 
 }
 
 .sobre-texto h2 {
@@ -472,46 +469,51 @@ nav ul li a:hover {
    Tablets e Telas Pequenas (Até 768px)
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
-    /* Cabeçalho muda o menu para baixo da logo se faltar espaço lateral */
     .header-container {
         flex-direction: column;
         gap: 15px;
     }
 
     nav {
-        position: static; /* Tira o menu da ponta direita e centraliza abaixo da logo */
+        position: static; 
     }
 
     nav ul {
         gap: 25px;
     }
 
-    /* Seção Sobre Mim vira uma coluna (Vertical) */
+    /* Seção Sobre Mim vira uma coluna */
     .sobre-container {
         flex-direction: column;
         text-align: center;
         gap: 40px;
     }
 
+    /* Força o container da foto e a imagem a centralizarem perfeitamente */
+    .sobre-foto {
+        margin: 0 auto;
+    }
+
+    .sobre-foto img {
+        margin: 0 auto; /* Zera qualquer empurrão lateral e joga pro meio */
+    }
+
     .sobre-texto {
         max-width: 100%;
     }
 
-    /* Seção PCs vira uma coluna (Vertical) */
     .pcs-container {
         flex-direction: column;
     }
 
     .pc-info, .pc-carrossel {
-        width: 100%; /* Cada bloco assume a largura inteira da tela do tablet */
+        width: 100%; 
     }
 
-    /* Formulário expande para usar melhor o espaço do tablet */
     .form-row {
         gap: 15px;
     }
 
-    /* Os 3 Cards de contato se empilham em telas menores */
     .contato-cards {
         flex-direction: column;
         gap: 20px;
@@ -528,30 +530,29 @@ nav ul li a:hover {
     }
 
     #sobre-mim, #pcs, #contato {
-        padding: 50px 20px; /* Margens bem finas para aproveitar a telinha do celular */
+        padding: 50px 20px; 
     }
 
-    /* Foto do 'Sobre Mim' se adapta perfeitamente ao tamanho da tela do celular */
+    /* Reduz o tamanho da foto quadrada e a mantém em foco no centro da telinha */
     .sobre-foto img {
         width: 280px; 
         height: 280px;
+        margin: 0 auto;
     }
 
     .sobre-texto h2, .pc-info h2, .contato-titulo {
-        font-size: 2rem; /* Títulos menores para não quebrarem a tela */
+        font-size: 2rem; 
     }
 
-    /* Imagens do Carrossel diminuem a altura para não achatar no celular */
     .slide img {
         height: 280px;
     }
 
     .carrossel-btn {
         padding: 8px 12px;
-        font-size: 1.2rem; /* Botões do carrossel menores para não cobrir a foto */
+        font-size: 1.2rem; 
     }
 
-    /* O formulário de contato (Nome e Email) fica um embaixo do outro */
     .form-row {
         flex-direction: column;
         gap: 20px;
@@ -562,6 +563,6 @@ nav ul li a:hover {
     }
     
     .card-item {
-        padding: 20px 10px; /* Ajusta o padding interno dos cards de rede social */
+        padding: 20px 10px; 
     }
 }
