@@ -489,19 +489,19 @@ nav ul li a:hover {
         gap: 40px;
     }
 
-    /* Força o container da foto e a imagem a centralizarem perfeitamente */
     .sobre-foto {
         margin: 0 auto;
     }
 
     .sobre-foto img {
-        margin: 0 auto; /* Zera qualquer empurrão lateral e joga pro meio */
+        margin: 0 auto; 
     }
 
     .sobre-texto {
         max-width: 100%;
     }
 
+    /* Seção PCs vira uma coluna (Vertical) */
     .pcs-container {
         flex-direction: column;
     }
@@ -509,6 +509,20 @@ nav ul li a:hover {
     .pc-info, .pc-carrossel {
         width: 100%; 
     }
+
+    /* === NOVOS AJUSTES DA SEÇÃO DE PORTFÓLIO DE PCs === */
+    .pc-info h2, .pc-info h3 {
+        text-align: center; /* Centraliza o Título e o Subtítulo no mobile */
+    }
+
+    .pc-info p {
+        text-align: justify; /* Mantém o parágrafo alinhado/justificado nas laterais */
+    }
+
+    .pc-info ul li {
+        text-align: left; /* Garante que os tópicos das especificações comecem alinhados à esquerda */
+    }
+    /* ================================================= */
 
     .form-row {
         gap: 15px;
