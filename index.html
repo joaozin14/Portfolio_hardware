@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Montagem e Manutenção de Hardware</title>
+    <!-- Biblioteca Font Awesome para carregar os ícones de redes sociais e telefone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho Principal (Tela Cheia com Logo Centralizada) -->
+    <header>
+        <div class="header-container">
+            <!-- Logo Centralizada -->
+            <div class="logo">
+                <img src="IMG/logo.png" alt="Logo JH - Automação e Hardware">
+            </div>
+
+            <!-- Menu de Navegação na Direita -->
+            <nav>
+                <ul>
+                    <li><a href="#sobre-mim">Sobre Mim</a></li>
+                    <li><a href="#pcs">PCs</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Linha Divisória de Ponta a Ponta -->
+    <hr class="header-divider">
+
+    <!-- Conteúdo Principal do Portfólio -->
+    <main>
+
+        <!-- Seção 1: Sobre Mim (Foto na Esquerda, Texto Afastado na Direita) -->
+        <section id="sobre-mim">
+            <div class="sobre-container">
+                <!-- Lado Esquerdo: Foto Quadrada com Moldura -->
+                <div class="sobre-foto">
+                    <img src="IMG/minha_foto.jpeg" alt="Foto de João Henrique">
+                </div>
+                <!-- Lado Direito: Texto Alinhado -->
+                <div class="sobre-texto">
+                    <h2>Sobre Mim</h2>
+                    <p>Olá, meu nome é João Henrique! Atualmente sou estudante em Tecnologia da informação pela Univesp e entusiasta em montagem, manutenção e otimização de computadores. Minha paixão por tecnologia me levou a estudar sobre arquitetura de hardware, desde computadores para jogos até estações de trabalho.</p>
+                    <p>Com foco em máxima eficiência, organization interna (cable management) e escolha estratégica de componentes, ajudo meus clientes a extraírem o melhor desempenho possível de suas máquinas, garantindo durabilidade e estabilidade no dia a dia.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: PCs (Especificações na Esquerda, Carrossel na Direita) -->
+        <section id="pcs">
+            <div class="pcs-container">
+                <!-- Lado Esquerdo: Informações Técnicas -->
+                <div class="pc-info">
+                    <h2>Projetos de Destaque</h2>
+                    <h3>PC Gamer & Workstation de Alta Performance</h3>
+                    <p>Este projeto é meu PC de uso pessoal, foi montado com foco em máxima eficiência térmica, gerenciamento de cabos impecável (cable management) e poder de processamento tanto para jogos quanto para fluxos de trabalho intensos.</p>
+                    <h4>Especificações Técnicas:</h4>
+                    <ul>
+                        <li><strong>Processador:</strong> AMD Ryzen 3 3200G</li>
+                        <li><strong>Placa de Vídeo:</strong> AMD Radeon RX 5600</li>
+                        <li><strong>Memória RAM:</strong> 2x8GB DDR4 3200MHz</li>
+                        <li><strong>Armazenamento:</strong> SSD NVMe M.2 500GB</li>
+                        <li><strong>Refrigeração:</strong> Water Cooler de 240mm</li>
+                        <li><strong>Fonte:</strong> Mancer Thunder 500W Bronze 80 Plus</li>
+                        <li><strong>Placa Mãe:</strong> Pichau Danuri B550M-PX</li>
+                    </ul>
+                </div>
+                <!-- Lado Direito: Estrutura do Carrossel de Fotos -->
+                <div class="pc-carrossel">
+                    <div class="carrossel-slides">
+                        <div class="slide"><img src="IMG/foto_pc1.jpeg" alt="Foto 1 do PC Montado"></div>
+                        <div class="slide"><img src="IMG/foto_pc2.jpeg" alt="Foto 2 do PC Montado"></div>
+                        <div class="slide"><img src="IMG/foto_pc3.jpeg" alt="Foto 3 do PC Montado"></div>
+                    </div>
+                    <button type="button" class="carrossel-btn btn-prev">&#10094;</button>
+                    <button type="button" class="carrossel-btn btn-next">&#10095;</button>
+                    <div class="carrossel-indicadores">
+                        <span class="bolinha ativa"></span>
+                        <span class="bolinha"></span>
+                        <span class="bolinha"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="contato-container">
+                
+                <h2 class="contato-titulo">Entre em Contato!</h2>
+                <p class="contato-subtitulo">Entre em contato para podermos bater um papo!</p>
+
+                <form id="form-contato" action="https://formspree.io/f/mbdvvevy" method="POST" class="contato-formulario">
+                    
+                    <input type="hidden" id="formulario-assunto" name="_subject" value="Novo Contato do Portfólio">
+                    <input type="hidden" name="Mensagem Padrão" value="Olá, João Henrique! Gostaria de fazer um orçamento para montagem/manutenção ou consultoria de Hardware">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Insira um endereço de email válido" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" placeholder="Insira seu Nome" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-enviar">ENVIAR</button>
+                </form>
+
+                <!-- Bloco de Ícones Inferiores Transformados em Cards Clicáveis -->
+                <div class="contato-cards">
+                    
+                    <!-- Card 1: Instagram (Todo o bloco é um link) -->
+                    <a href="https://instagram.com/joaohms14" target="_blank" class="card-item">
+                        <div class="icon-circle">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h3>INSTAGRAM</h3>
+                        <p>@joaohms14</p>
+                    </a>
+
+                    <!-- Card 2: Telefone (Todo o bloco é um link) -->
+                    <a href="tel:+5511954537288" class="card-item">
+                        <div class="icon-circle">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>TELEFONE</h3>
+                        <p>(11) 95453-7288</p>
+                    </a>
+
+                    <!-- Card 3: LinkedIn (Todo o bloco é um link) -->
+                    <a href="https://linkedin.com/in/seu_perfil" target="_blank" class="card-item">
+                        <div class="icon-circle">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <h3>LINKEDIN</h3>
+                        <p>João Henrique</p>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        const campoNome = document.getElementById('nome');
+        const campoAssunto = document.getElementById('formulario-assunto');
+
+        campoNome.addEventListener('input', function() {
+            if (campoNome.value.trim() !== "") {
+                campoAssunto.value = `Contato: ${campoNome.value}`;
+            } else {
+                campoAssunto.value = "Novo Contato do Portfólio";
+            }
+        });
+    </script>
+
+    <!-- Script de Controle do Carrossel de PCs -->
+    <script>
+        const slides = document.querySelector('.carrossel-slides');
+        const slideItems = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.btn-prev');
+        const nextBtn = document.querySelector('.btn-next');
+        const bolinhas = document.querySelectorAll('.bolinha');
+        
+        let indexAtual = 0;
+        const totalSlides = slideItems.length;
+
+        // Função que move o carrossel para o slide correto
+        function atualizarCarrossel() {
+            // Desloca as imagens horizontalmente baseado no index atual
+            slides.style.transform = `translateX(-${indexAtual * 100}%)`;
+            slides.style.transition = "transform 0.4s ease-in-out";
+
+            // Atualiza as bolinhas indicadoras
+            bolinhas.forEach((bolinha, idx) => {
+                if (idx === indexAtual) {
+                    bolinha.classList.add('ativa');
+                } else {
+                    bolinha.classList.remove('ativa');
+                }
+            });
+        }
+
+        // Evento do botão Próximo
+        nextBtn.addEventListener('click', () => {
+            if (indexAtual < totalSlides - 1) {
+                indexAtual++;
+            } else {
+                indexAtual = 0; // Volta para a primeira foto se estiver na última
+            }
+            atualizarCarrossel();
+        });
+
+        // Evento do botão Anterior
+        prevBtn.addEventListener('click', () => {
+            if (indexAtual > 0) {
+                indexAtual--;
+            } else {
+                indexAtual = totalSlides - 1; // Vai para a última se estiver na primeira
+            }
+            atualizarCarrossel();
+        });
+
+        // Permite clicar direto nas bolinhas para mudar de foto
+        bolinhas.forEach((bolinha, idx) => {
+            bolinha.addEventListener('click', () => {
+                indexAtual = idx;
+                atualizarCarrossel();
+            });
+        });
+    </script>
+
+</body>
+</html>

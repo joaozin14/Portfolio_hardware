@@ -1,0 +1,443 @@
+/* ==========================================================================
+   1. RESET GERAL E CONFIGURAÇÕES DE TELA
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fcfcfc; 
+    color: #222222;
+    line-height: 1.6;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO (HEADER - LOGO NO CENTRO E MENU NA DIREITA)
+   ========================================================================== */
+header {
+    background-color: #fcfcfc;
+    padding: 20px 60px;
+    width: 100%;
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    margin: 0 auto;
+}
+
+.logo img {
+    display: block;
+    height: auto;
+    max-width: 140px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.25));
+}
+
+nav {
+    position: absolute;
+    right: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #111111;
+    font-weight: 700;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #0d4f75; 
+}
+
+.header-divider {
+    border: 0;
+    height: 1px;
+    background-color: #e0e0e0;
+    width: 100%;
+}
+
+/* ==========================================================================
+   3. SEÇÃO SOBRE MIM (FOTO MAIOR E TEXTO DESLOCADO PARA A DIREITA)
+   ========================================================================== */
+#sobre-mim {
+    width: 100%;
+    padding: 80px 80px; /* Aumentei um pouco o espaçamento nas bordas da página */
+}
+
+.sobre-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* Define o alinhamento inicial (foto na esquerda, texto empurrado depois) */
+    justify-content: flex-start; 
+    gap: 120px; /* Aumentei o espaçamento direto entre a foto e o início do texto */
+}
+
+/* Lado Esquerdo: Foto Quadrada Ajustada para ficar Maior */
+.sobre-foto {
+    flex-shrink: 0;
+}
+
+.sobre-foto img {
+    width: 430px;   /* Aumentado de 350px para 420px */
+    height: 430px;  /* Mantém o quadrado perfeito */
+    object-fit: cover;
+    display: block;
+    border: 6px solid #0d4f75; 
+    border-radius: 8px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin-right: 130px;
+    margin-left: 60px;
+}
+
+.sobre-foto img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 15px 30px rgba(13, 79, 117, 0.35);
+}
+
+/* Lado Direito: Texto Deslocado e com largura controlada */
+.sobre-texto {
+    flex-grow: 1;
+    max-width: 800px; /* Evita que o texto estique até a borda da tela, deixando-o concentrado na direita */
+}
+
+.sobre-texto h2 {
+    font-size: 2.5rem;
+    color: #111111;
+    margin-bottom: 25px;
+}
+
+.sobre-texto p {
+    font-size: 1.15rem;
+    color: #444444;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* ==========================================================================
+   4. SEÇÃO PCS (ESTRUTURA BASE DO CARROSSEL)
+   ========================================================================== */
+#pcs {
+    width: 100%;
+    padding: 80px 60px;
+    background-color: #f7f9fa;
+}
+
+.pcs-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.pc-info {
+    width: 50%;
+}
+
+.pc-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.pc-info h3 {
+    font-size: 1.4rem;
+    color: #0d4f75;
+    margin-bottom: 20px;
+}
+
+.pc-info h4 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.pc-info p {
+    font-size: 1.1rem;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+.pc-info ul {
+    list-style-type: none;
+}
+
+.pc-info ul li {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.pc-info ul li::before {
+    content: "•";
+    color: #0d4f75;
+    font-weight: bold;
+    font-size: 1.3rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.pc-carrossel {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+}
+
+.carrossel-slides {
+    display: flex;
+    width: 100%;
+    /* Garante animações suaves de transição */
+    transition: transform 0.4s ease-in-out; 
+}
+
+.slide {
+    min-width: 100%;
+    background-color: #151515; /* Fundo escuro para preencher as sobras da foto sem estragar o design */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 400px;
+    /* Altera de cover para contain: remove o zoom e mostra a foto inteira sem cortes */
+    object-fit: contain; 
+    display: block;
+}
+
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(13, 79, 117, 0.8);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    padding: 12px 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.carrossel-btn:hover {
+    background-color: #0d4f75;
+}
+
+.btn-prev { left: 20px; }
+.btn-next { right: 20px; }
+
+.carrossel-indicadores {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.bolinha {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.bolinha.ativa {
+    background-color: #0d4f75;
+    width: 24px;
+    border-radius: 6px;
+}
+
+/* ==========================================================================
+   5. SEÇÃO CONTATO (ATUALIZADA COM O AZUL ESCURO DA LOGO)
+   ========================================================================== */
+#contato {
+    width: 100%;
+    padding: 80px 60px;
+    text-align: center;
+}
+
+.contato-titulo {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #111111;
+    margin-bottom: 5px;
+}
+
+.contato-subtitulo {
+    font-size: 1.2rem;
+    color: #333333;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.contato-formulario {
+    max-width: 750px;
+    margin: 0 auto 80px auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    flex: 1;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    color: #555555;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 20px;
+    border: 1px solid #e0e0e0;
+    background-color: #eeeeee; 
+    border-radius: 30px; 
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #0d4f75; /* Foco muda para o azul da logo */
+}
+
+/* Botão Enviar com o Azul da Logo */
+.btn-enviar {
+    width: 100%;
+    background-color: #0d4f75; /* Azul Escuro da Logo */
+    color: white;
+    border: none;
+    padding: 16px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.btn-enviar:hover {
+    background-color: #0a3d5a; /* Tom ligeiramente mais escuro no hover */
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 15px rgba(13, 79, 117, 0.3);
+}
+
+/* Grid de Cards Inferiores */
+.contato-cards {
+    width: 100%;
+    background-color: #eaeaea; 
+    padding: 60px 40px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    border-bottom: 15px solid #0d4f75; 
+}
+
+/* O Card individual agora é um Link '<a>' */
+.card-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none; /* Remove qualquer sublinhado de link do bloco todo */
+    
+    /* Configuração da Borda Individual */
+    background-color: #f5f5f5; /* Um fundo ligeiramente mais claro que o container de trás */
+    border: 2px solid #cccccc; /* Borda cinza discreta inicial */
+    padding: 30px 20px;
+    border-radius: 12px;
+    
+    /* Transição suave para quando o usuário passar o mouse */
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efeito Interativo ao passar o mouse ou tocar no Card */
+.card-item:hover {
+    transform: translateY(-5px); /* Dá um leve salto para cima */
+    border-color: #0d4f75; /* A borda acende com o azul da sua logo */
+    background-color: #ffffff; /* O fundo fica branco puro para destacar */
+    box-shadow: 0px 8px 20px rgba(13, 79, 117, 0.15); /* Sombra suave azulada */
+}
+
+/* Círculos dos Ícones */
+.icon-circle {
+    width: 90px;
+    height: 90px;
+    background-color: #0d4f75; 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0px 5px 15px rgba(13, 79, 117, 0.3);
+}
+
+.icon-circle i {
+    color: white;
+    font-size: 2.2rem;
+}
+
+.card-item h3 {
+    font-size: 1.2rem;
+    color: #111111;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* Estilização do texto abaixo do título */
+.card-item p {
+    color: #555555;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Se o usuário passar o mouse no card, o texto do @ ou telefone também fica azul */
+.card-item:hover p {
+    color: #0d4f75;
+}
